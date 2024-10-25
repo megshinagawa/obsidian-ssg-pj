@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite && nodemon --watch vault --exec 'npm run generate' && npm start",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build-static-pages": "node ./scripts/buildStaticPages.js"
+    "generate-static-site": "node ./scripts/generateSite.js && node ./scripts/generatePagesJson.js",
+    "build": "npm run generate-static-site",
+    "start": "npm run generate-static-site",
+    "generate": "node src/generateSite.js"
   },
   "dependencies": {
     "chokidar": "^4.0.1",

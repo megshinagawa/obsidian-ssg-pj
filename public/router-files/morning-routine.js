@@ -5,7 +5,7 @@
           </head>
           <body>
             <h1>MORNING ROUTINE</h1>
-<p><a href="routines.html">routines</a>, <a href="habits.html">habits</a></p><h2>Time Table</h2>
+<p><Link to="routines.html">routines</Link>, <Link to="habits.html">habits</Link></p><h2>Time Table</h2>
 <table>
 <thead>
 <tr>

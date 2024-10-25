@@ -1,10 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path';
 import { processMarkdown } from './parseMarkdown.js';
-
+import { convertHtmlToReactRouter } from './convertHtmlToReactRouter.js';
 
 const inputDir = 'vault';
 const outputDir = 'public/static-sites';
+const finaloutputDir = 'public/router-files';
 
 // Ensure output directory is clean
 fs.emptyDirSync(outputDir);
@@ -39,8 +40,13 @@ function generateSite() {
       // Write the HTML file to the output directory
       fs.writeFileSync(outputFilePath, finalHtml);
       console.log(`Generated ${outputFilePath}`);
+
+      // Write HTML file to js
+      const finaloutputFilePath = path.join(finaloutputDir, file.replace('.md', '.js'));
+      convertHtmlToReactRouter(outputFilePath, finaloutputFilePath)
     }
   });
 }
 
 generateSite();
+
