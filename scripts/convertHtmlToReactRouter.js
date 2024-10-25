@@ -10,7 +10,7 @@ export function convertHtmlToReactRouter(input) {
     // Replace <a> tags with <Link> components
     const modifiedContent = input.replace(linkRegex, (match, href, attributes, linkText) => {
         // Generate the Link component
-        return `<Link to="${href}"${attributes}>${linkText}</Link>`;
+        return `<Link to="${href}"${attributes}>/${linkText}</Link>`;
     });
 
     return modifiedContent;

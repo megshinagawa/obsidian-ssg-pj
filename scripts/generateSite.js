@@ -41,7 +41,7 @@ function generateSite() {
       // Write the HTML file to the output directory
       fs.writeFileSync(outputFilePath, finalHtml);
       // fs.writeFileSync(outputFilePath, convertHtmlToReactRouter(finalHtml));
-      console.log(`Generated ${outputFilePath}`);
+      // console.log(`Generated ${outputFilePath}`);
 
       
     }

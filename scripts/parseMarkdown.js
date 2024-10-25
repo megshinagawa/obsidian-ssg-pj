@@ -53,7 +53,7 @@ md.use(function(md) {
         // Create child tokens for each tag
         tags.forEach((tag, index) => {
           const linkToken = new state.Token('link_open', 'a', 1); // Opening <a> tag
-          linkToken.attrs = [['href', `${tag}.html`]]; // Setting the href attribute
+          linkToken.attrs = [['href', `${tag}`]]; // Setting the href attribute
           
           const linkContentToken = new state.Token('text', '', 0); // Inline token for the link text
           linkContentToken.content = tag; // Set the link text (tag name)
@@ -156,7 +156,7 @@ md.use(function(md) {
 
                 // Create the link token
                 const linkOpen = new state.Token('link_open', 'a', 1);
-                linkOpen.attrs = [['href', `${linkText}.html`]]; // Set the href for the link
+                linkOpen.attrs = [['href', `/${linkText}`]]; // Set the href for the link
 
                 // Add the link text as a token
                 const linkContent = new state.Token('text', '', 0);
