@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite && nodemon --watch vault --exec 'npm run generate' && npm start",
+    "dev": " npm start && vite",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-static-site": "node ./scripts/generateSite.js && node ./scripts/generatePagesJson.js",

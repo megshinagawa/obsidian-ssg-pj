@@ -10,6 +10,7 @@ const finaloutputDir = 'public/router-files';
 // Ensure output directory is clean
 fs.emptyDirSync(outputDir);
 
+
 // Recursively read all markdown files
 function generateSite() {
   const files = fs.readdirSync(inputDir);
@@ -39,11 +40,10 @@ function generateSite() {
 
       // Write the HTML file to the output directory
       fs.writeFileSync(outputFilePath, finalHtml);
+      // fs.writeFileSync(outputFilePath, convertHtmlToReactRouter(finalHtml));
       console.log(`Generated ${outputFilePath}`);
 
-      // Write HTML file to js
-      const finaloutputFilePath = path.join(finaloutputDir, file.replace('.md', '.js'));
-      convertHtmlToReactRouter(outputFilePath, finaloutputFilePath)
+      
     }
   });
 }
